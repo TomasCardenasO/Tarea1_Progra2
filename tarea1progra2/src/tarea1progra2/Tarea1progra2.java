@@ -2,12 +2,11 @@ package tarea1progra2;
 import java.util.Date;
 
 public class Tarea1progra2 {
-
     public static void main(String[] args) {
         
-    }
-    
+    }    
 }
+
 class Cliente {
     private String nombre;
     private String rut;
@@ -16,12 +15,14 @@ class Cliente {
         direccion = d;
     }
 }
+
 class Direccion {
     private String direccion;
     public Direccion(String direccion) {
         this.direccion = direccion;
     }
 }
+
 class Articulo {
     private float peso;
     private String nombre;
@@ -40,6 +41,7 @@ class Articulo {
         return peso;
     }
 }
+
 class DetalleOrden {
     private int cantidad;
     Articulo articulo;
@@ -64,16 +66,64 @@ class DetalleOrden {
     }
     public double calcPeso() {
         double peso = 0;
-        for(int i = 0; i < cantidad; i++) {
-            peso += articulo.getPeso();
-        }
+        peso = articulo.getPeso() * cantidad;
         return peso;
     }
 }
+
 class OrdenCompra {
     private Date fecha;
     private String estado;
     private DetalleOrden detalleOrden;
+    public OrdenCompra(Date fecha, String estado){
+        this.fecha = fecha;
+        this.estado = estado;
+    }
+    public double calcPrecioSinIVA(){
+        
+    }
+    public double calcIVA(){
+        
+    }
+    public double calcPrecio(){
+        
+    }
+    public double calcPeso(){
+     
+    }
     
 }
 
+class DocTributario {
+    private String numero;
+    private String rut;
+    private Date fecha;
+}
+
+class Boleta extends DocTributario{
+    public Boleta(){
+        
+    }
+}
+
+class Factura extends DocTributario{
+    public Factura(){
+        
+    }
+}
+
+class Pago {
+    
+}
+
+class Efectivo extends Pago {
+    
+}
+
+class Transferencia extends Pago {
+    
+}
+
+class Tarjeta extends Pago{
+    
+}
