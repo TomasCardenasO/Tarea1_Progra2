@@ -3,9 +3,15 @@ package tarea1progra2;
 import java.util.Date;
 
 public class Pago {
-    float monto;
+    double monto;
     Date fecha;
-    public Pago() {
+    public Pago(double pago) {
         fecha = new Date();
+        monto = pago;
+        
+        
+    }
+    public double getMonto(){
+        return monto;
     }
 }

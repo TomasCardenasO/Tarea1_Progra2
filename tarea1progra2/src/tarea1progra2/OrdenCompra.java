@@ -6,10 +6,12 @@ import java.util.ArrayList;
 public class OrdenCompra {
     private Date fecha;
     private String estado;
-    private ArrayList<DetalleOrden> detallesOrden;
-    public OrdenCompra(){
+    public ArrayList<DetalleOrden> detallesOrden;  //debido a que nos sirve para concer los detalles de cada orden
+    Cliente cliente;
+    public OrdenCompra(Cliente Cliente){ //por ahora
+        this.cliente = cliente;
         fecha = new Date();
-        estado = ;
+        estado = "pendiente de pago";//LO CAMBIARÍA POR UNA VARIABLE
         detallesOrden = new ArrayList<DetalleOrden>();
     }
     public double calcPrecioSinIVA(){
@@ -33,5 +35,15 @@ public class OrdenCompra {
             peso += detallesOrden.get(i).calcPeso();
         }
         return peso;
+        
     }
+    public void setDetalle(Articulo articulo, int cantidad){
+        DetalleOrden Det = new DetalleOrden(articulo, cantidad);
+        detallesOrden.add(Det);
+        
+        
+    }
+    /*public void Pagar(Pago monto){
+        double porpagar = precioconIVA - monto;
+    }*/
 }
