@@ -5,12 +5,11 @@ import java.util.Date;
 public class Pago {
     double monto;
     Date fecha;
-    public Pago(double pago) {
+    public Pago(double monto) {
         fecha = new Date();
-        monto = pago;
-        
-        
+        this.monto = monto;   
     }
+    
     public double getMonto(){
         return monto;
     }

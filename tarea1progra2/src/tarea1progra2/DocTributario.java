@@ -13,20 +13,15 @@ public class DocTributario {
         this.numero = numero;
         this.rut = rut;
         fecha = new Date();
-        this.direccion = direccion;
-        
+        this.direccion = direccion;  
     }
     public String getNumero(){
         return numero;
-        
     }
     public String getRut(){
         return rut;
-        
     }
     public Date getFecha(){
         return fecha;
-        
     }
-    
 }

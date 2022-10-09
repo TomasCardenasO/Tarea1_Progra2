@@ -6,9 +6,6 @@ public class Cliente {
     public Cliente(String nombre, String rut, String d) {
         this.nombre = nombre;
         this.rut = rut;
-        Direccion direccion = new Direccion(d);
-        
-        
+        Direccion direccion = new Direccion(d);  
     }
-    
 }
