@@ -16,7 +16,10 @@ public class DetalleOrden {
     public double calcPrecioSinIVA() { //puede que la suma sea muy grande para el float, por eso es double
         return (calcPrecio() - calcIVA());
     }
-     public double calcPeso() {
+    public double calcPeso() {
         return (articulo.getPeso() * cantidad);
+    }
+    public String toString() {
+        return "Artculo del Detalle: " + articulo.getNombre() + ", Cantidad: " + cantidad + ", Total: " + calcPrecio() + ", Peso: " + calcPeso();
     }
 }

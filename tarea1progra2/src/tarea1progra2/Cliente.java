@@ -10,7 +10,13 @@ public class Cliente {
         Direccion direction = new Direccion(d);  
         this. direccion = direction;
     }
+    public String getNombre() {
+        return nombre;
+    }
     public String getRut(){
         return rut;
+    }
+    public String toString() {
+        return "Nombre Cliente: " + nombre + ", Rut: " + rut;
     }
 }

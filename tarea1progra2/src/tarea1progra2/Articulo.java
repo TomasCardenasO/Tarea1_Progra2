@@ -17,4 +17,10 @@ public class Articulo {
     public float getPeso() {
         return peso;
     }
+    public String getNombre() {
+        return nombre;
+    }
+    public String toString() {
+        return "Nombre Articulo: " + nombre + ", Precio: " + precioconIVA + ", Peso: " + peso;
+    }
 }
