@@ -10,12 +10,14 @@ public class OrdenCompra {
     Cliente cliente;
     double deuda;
     
-    public OrdenCompra(Cliente Cliente){ //por ahora
+    
+    public OrdenCompra(Cliente cliente){ //por ahora
         this.cliente = cliente;
         fecha = new Date();
-        estado = "pendiente de pago";
         detallesOrden = new ArrayList<DetalleOrden>();
         deuda = 0;
+
+        
     }
     
     public double calcPrecioSinIVA(){
@@ -48,15 +50,26 @@ public class OrdenCompra {
         DetalleOrden Det = new DetalleOrden(articulo, cantidad);
         detallesOrden.add(Det);
         deuda += Det.calcPrecio();
+        
     }
     
     public double getDeuda(){
-        if (deuda < 0)
-            deuda = 0;
         return deuda;
     }
     
     public void Pagar(double monto){
-        deuda -= monto;
+        deuda = deuda - monto;
+    }
+  
+    public String getEstado(){
+        if(deuda <= 0){
+        estado = "pagado";
+    
+         }else{
+        estado = "pendiente de pago";
+        }
+        return estado;
+        
+        
     }
 }

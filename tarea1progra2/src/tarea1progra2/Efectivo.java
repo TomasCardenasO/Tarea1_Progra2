@@ -2,8 +2,8 @@ package tarea1progra2;
 
 public class Efectivo extends Pago {
     double porPagar;
-    public Efectivo(double monto, double porpagar) {
-        super(monto);
+    public Efectivo(double monto, Cliente cliente, double porpagar) {
+        super(monto, cliente);
         this.porPagar = porpagar;
     }
     public double calcDevolucion() {

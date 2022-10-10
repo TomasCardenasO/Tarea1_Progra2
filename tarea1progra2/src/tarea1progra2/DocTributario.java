@@ -24,4 +24,7 @@ public class DocTributario {
     public Date getFecha(){
         return fecha;
     }
+    public String getDireccion(){
+        return direccion.getDirection();
+    }
 }

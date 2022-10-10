@@ -21,15 +21,32 @@ public class Tarea1progra2 {
         System.out.println("El precio sin IVA total de los xbox es " + ordCom.detallesOrden.get(3).calcPrecio() + " pesos");
         System.out.println("El peso total del pedido es " + ordCom.calcPeso() + "kilos");
         
-        Tarjeta pagotar = new Tarjeta("Debito"," 062342", 200000);
+        Tarjeta pagotar = new Tarjeta("Debito"," 062342", 200000, cliente);
         ordCom.Pagar(pagotar.getMonto());
-        Transferencia pagotrans = new Transferencia("Banco estado", "00020295744",50000);
+        
+        System.out.println(pagotar.getterBoleta());
+        
+       
+        Transferencia pagotrans = new Transferencia("Banco estado", "00020295744",50000, cliente);
+        
+        System.out.println(ordCom.getEstado());
+        
         ordCom.Pagar(pagotrans.getMonto());
-        Efectivo pagoefectivo = new Efectivo(2000000, ordCom.getDeuda());
+        
+        
+        Efectivo pagoefectivo = new Efectivo(2000000,cliente, ordCom.getDeuda());
         ordCom.Pagar(pagoefectivo.getMonto());
         
         System.out.println("Faltan " + ordCom.getDeuda() + " por pagar");
         System.out.println("El vuelto es de " + pagoefectivo.calcDevolucion() + " pesos");
+        System.out.println("Faltanss " + ordCom.getDeuda() );
+        
+        System.out.println(ordCom.getEstado());
+        System.out.println(pagotar.getterBoleta());
+        
+        
+        
+    
              
     }    
 }
